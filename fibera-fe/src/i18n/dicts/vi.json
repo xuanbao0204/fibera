@@ -1,0 +1,85 @@
+{
+    "navbar": {
+        "home": "Trang chủ",
+        "about": "Giới thiệu",
+        "services": "Dịch vụ",
+        "contact": "Liên hệ",
+        "language": "Ngôn ngữ",
+        "login": "Đăng nhập",
+        "register": "Đăng ký"
+    },
+    "landing-page": {
+        "metadata": {
+            "title": "Fibera - Phòng tốt",
+            "description": "Kết nối nhanh chóng với hàng ngàn phòng trọ, căn hộ mini và studio đã xác thực 100%. Giá thuê minh bạch, không phí môi giới, đặt lịch xem phòng trực tuyến tiện lợi."
+        },
+        "hero": {
+            "leading": "Chào mừng bạn đến với Fibera - nền tảng tìm kiếm phòng trọ",
+            "badge": "⚡ Nền tảng tìm trọ thông minh thế hệ mới",
+            "titlePart1": "Tìm căn phòng mơ ước,",
+            "titlePart2": "trọn vẹn cảm giác như ở nhà",
+            "description": "Kết nối nhanh chóng với hàng ngàn phòng trọ, căn hộ mini và studio đã xác thực 100%. Giá thuê minh bạch, không phí môi giới, đặt lịch xem phòng trực tuyến tiện lợi.",
+            "search": {
+                "tabs": {
+                    "all": "Tất cả",
+                    "room": "Phòng trọ",
+                    "apartment": "Căn hộ mini",
+                    "shared": "Ở ghép"
+                },
+                "locationLabel": "Địa điểm / Trường học",
+                "locationPlaceholder": "Bạn muốn thuê khu vực nào?",
+                "priceLabel": "Mức giá",
+                "pricePlaceholder": "Tất cả mức giá",
+                "priceOptions": {
+                    "under3m": "Dưới 3 triệu",
+                    "from3mTo5m": "3 - 5 triệu",
+                    "from5mTo8m": "5 - 8 triệu",
+                    "above8m": "Trên 8 triệu"
+                },
+                "typeLabel": "Loại phòng",
+                "typePlaceholder": "Chọn loại phòng",
+                "typeOptions": {
+                    "studio": "Studio khép kín",
+                    "mezzanine": "Có gác lửng",
+                    "oneBed": "1 Phòng ngủ",
+                    "twoBed": "2 Phòng ngủ"
+                },
+                "searchButton": "Tìm kiếm ngay",
+                "trendingLabel": "Tìm kiếm phổ biến:",
+                "trendingTags": [
+                    "Gần ĐH Bách Khoa",
+                    "Quận Cầu Giấy",
+                    "Có ban công",
+                    "Nuôi thú cưng",
+                    "Không chung chủ"
+                ]
+            },
+            "floatingCards": {
+                "verifiedTitle": "100% Xác minh thực tế",
+                "verifiedSubtitle": "Hình ảnh & video chuẩn thực địa",
+                "rating": "4.9/5",
+                "reviews": "(2,800+ đánh giá)",
+                "matchedRoom": "Phòng Studio Ban Công",
+                "pricePerMonth": "4.2 Tr/tháng",
+                "district": "Hà Nội • Đầy đủ tiện nghi"
+            }
+        },
+        "stats": {
+            "eyebrow": "Số liệu",
+            "title": "Con số nói lên chất lượng",
+            "description": "Dữ liệu thị trường được cập nhật liên tục để bạn thuê đúng giá.",
+            "verifiedRooms": "15,000+",
+            "verifiedRoomsLabel": "Phòng trọ đã xác thực",
+            "happyTenants": "98%",
+            "happyTenantsLabel": "Người thuê hài lòng",
+            "savingFee": "0đ",
+            "savingFeeLabel": "Phí môi giới ẩn",
+            "aiMatch": "24/7",
+            "aiMatchLabel": "Gợi ý AI thông minh",
+            "chart": {
+                "title": "Giá thuê trung bình",
+                "unit": "triệu/tháng"
+            }
+        }
+    }
+}

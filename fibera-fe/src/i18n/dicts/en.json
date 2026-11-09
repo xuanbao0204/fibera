@@ -1,0 +1,90 @@
+{
+    "navbar": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "contact": "Contact",
+        "language": "Language",
+        "login": "Login",
+        "register": "Register"
+    },
+    "home": {
+        "title": "Welcome to Fibera",
+        "description": "Our solutions are designed for you.",
+        "getStarted": "Get started"
+    },
+    "landing-page": {
+        "metadata": {
+            "title": "Fibera - Good room for rent",
+            "description": "Get connected to many house/room for rent."
+        },
+        "hero": {
+            "leading": "Welcome to Fibera - the smart room rental platform",
+            "badge": "⚡ Next-Gen Smart Room Rental Platform",
+            "titlePart1": "Find your dream space,",
+            "titlePart2": "feel completely at home",
+            "description": "Connect instantly with thousands of 100% verified rooms, mini-apartments, and studios. Transparent pricing, zero hidden fees, and hassle-free online viewing schedules.",
+            "search": {
+                "tabs": {
+                    "all": "All",
+                    "room": "Rooms",
+                    "apartment": "Studio / Mini-Apt",
+                    "shared": "Shared Room"
+                },
+                "locationLabel": "Location / Campus",
+                "locationPlaceholder": "Where do you want to live?",
+                "priceLabel": "Price Range",
+                "pricePlaceholder": "Any budget",
+                "priceOptions": {
+                    "under3m": "Under $120 / mo",
+                    "from3mTo5m": "$120 - $200 / mo",
+                    "from5mTo8m": "$200 - $320 / mo",
+                    "above8m": "Above $320 / mo"
+                },
+                "typeLabel": "Room Type",
+                "typePlaceholder": "Select room type",
+                "typeOptions": {
+                    "studio": "Self-contained Studio",
+                    "mezzanine": "With Mezzanine",
+                    "oneBed": "1-Bedroom",
+                    "twoBed": "2-Bedroom"
+                },
+                "searchButton": "Search Now",
+                "trendingLabel": "Trending searches:",
+                "trendingTags": [
+                    "Near Tech University",
+                    "Downtown District",
+                    "Private Balcony",
+                    "Pet Friendly",
+                    "Independent Access"
+                ]
+            },
+            "floatingCards": {
+                "verifiedTitle": "100% On-site Verified",
+                "verifiedSubtitle": "Real photos & accurate video tour",
+                "rating": "4.9/5",
+                "reviews": "(2,800+ reviews)",
+                "matchedRoom": "Balcony Studio Suite",
+                "pricePerMonth": "$175/month",
+                "district": "City Center • Fully Furnished"
+            }
+        },
+        "stats": {
+            "eyebrow": "Statistics",
+            "title": "Numbers speak for themselves",
+            "description": "Market data is continuously updated to help you find the right rental price.",
+            "verifiedRooms": "15,000+",
+            "verifiedRoomsLabel": "Verified Listings",
+            "happyTenants": "98%",
+            "happyTenantsLabel": "Tenant Satisfaction",
+            "savingFee": "$0",
+            "savingFeeLabel": "Hidden Broker Fees",
+            "aiMatch": "24/7",
+            "aiMatchLabel": "Smart AI Matching",
+            "chart": {
+                "title": "Average rental price",
+                "unit": "million/month"
+            }
+        }
+    }
+}
