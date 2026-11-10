@@ -12,6 +12,11 @@ import {
 import "../globals.css";
 import { NavigationBar } from "@/components/layout/NavBar";
 import { StarBackground } from "@/components/layout/StarBackground";
+import { THEME_STORAGE_KEY } from "@/libs/theme";
+import { Footer } from "@/components/layout/Footer";
+import Script from "next/script";
+
+const themeScript = `try{var t=localStorage.getItem("${THEME_STORAGE_KEY}");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}`;
 
 const nunito = Nunito({
   variable: "--font-nunito-family",
@@ -30,7 +35,7 @@ export const metadata: Metadata = {
     default: "Fibera",
     template: "%s | Fibera",
   },
-  description: "Fibera - Your digital experience.",
+  description: "Fibera - The smart room rental platform.",
 };
 
 export function generateStaticParams() {
@@ -55,6 +60,9 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} data-theme="dark" suppressHydrationWarning>
+      <head>
+        <Script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body
         className={`${nunito.variable} ${nunitoSans.variable} min-h-full flex flex-col antialiased`}
       >
@@ -67,7 +75,8 @@ export default async function RootLayout({
           <NavigationBar lang={lang} t={dictionary.navbar} />
 
           {children}
-          
+
+          <Footer lang={lang} t={dictionary.footer} nav={dictionary.navbar} />
         </I18nProvider>
       </body>
     </html>

@@ -1,19 +1,37 @@
 .star-background {
+    --star-color: 255, 255, 255;
+    --star-opacity: 0.2;
+    --star-glow: rgba(255, 255, 255, 0.8);
+
     position: absolute;
     inset: 0;
     overflow: hidden;
     pointer-events: none;
     z-index: 0;
+
+}
+
+/* Dark theme */
+[data-theme="dark"] .star-background {
+    --star-color: 255, 255, 255;
+    --star-opacity: 0.2;
+    --star-glow: rgba(255, 255, 255, 0.8);
+}
+
+/* Light theme */
+[data-theme="light"] .star-background {
+    --star-color: 20, 55, 38;
+    --star-opacity: 0.12;
+    --star-glow: rgba(0, 245, 126, 0.35);
 }
 
 /* Small stars */
-
 .star {
     position: absolute;
     border-radius: 50%;
-    background: white;
-    opacity: 0.2;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    background: rgb(var(--star-color));
+    opacity: var(--star-opacity);
+    box-shadow: 0 0 8px var(--star-glow);
     animation: twinkle 4s ease-in-out infinite;
 }
 
@@ -32,14 +50,13 @@
 }
 
 /* Shooting stars */
-
 .shooting-star {
     position: absolute;
     width: 120px;
     height: 1px;
     background: linear-gradient(90deg,
             transparent,
-            rgba(255, 255, 255, 0.8),
+            rgba(var(--star-color), 0.8),
             transparent);
     opacity: 0;
     transform: rotate(-35deg);
@@ -79,7 +96,6 @@
 }
 
 /* Ambient glow */
-
 .ambient-glow {
     position: absolute;
     width: 400px;
@@ -103,6 +119,20 @@
     animation-delay: -5s;
 }
 
+/* Light theme glow */
+[data-theme="light"] .ambient-glow {
+    opacity: 0.09;
+    filter: blur(110px);
+}
+
+[data-theme="light"] .ambient-glow-1 {
+    background: #36c9a0;
+}
+
+[data-theme="light"] .ambient-glow-2 {
+    background: #75aaff;
+}
+
 @keyframes glow-float {
     from {
         transform: translate(0, 0);
@@ -114,7 +144,6 @@
 }
 
 /* Accessibility */
-
 @media (prefers-reduced-motion: reduce) {
 
     .star,

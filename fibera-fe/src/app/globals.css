@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import 'tailwindcss';
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
@@ -39,9 +41,9 @@
   --line: rgba(211, 238, 222, 0.12);
 
   /* Brand - Emerald */
-  --brand: #4DE3A3;
-  --brand-deep: #22C285;
-  --brand-ink: #062016;
+  --brand: #009c1a;
+  --brand-deep: #016d13;
+  --brand-ink: #dbffd3;
   --brand-text: #4DE3A3;
 
   /* Neutral */
@@ -105,6 +107,13 @@ html {
   line-height: 1.5;
   text-align: justify;
   min-width: 320px;
+  scroll-padding-top: 6rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -241,4 +250,8 @@ body::before {
   .animate-scan {
     animation: none;
   }
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }

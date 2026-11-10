@@ -2,36 +2,63 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { Menu, X, Globe, ChevronDown } from "lucide-react";
-import type { Locale } from "@/i18n/config";
+import { useEffect, useState } from "react";
+import { Menu, X, Globe } from "lucide-react";
+import { localeNames, locales, type Locale } from "@/i18n/config";
+import type { NavbarMessages } from "@/i18n/dictionary.type";
 import "./navigation-bar.css";
 import { cn } from "@/libs/utils";
+import { Logo } from "@/components/ui/Logo";
+import { ThemeToggle } from "./ThemeToggle";
+import { Dropdown } from "../ui/DropDown";
 
 type NavbarProps = {
     lang: Locale;
-    t: {
-        home: string;
-        about: string;
-        services: string;
-        contact: string;
-        language: string;
-        login: string;
-        register: string;
-    };
+    t: NavbarMessages;
 };
+
+const SPY_IDS = ["features", "about", "contact"] as const;
 
 export function NavigationBar({ lang, t }: NavbarProps) {
     const pathname = usePathname();
     const [mobileOpen, setMobileOpen] = useState(false);
-    const [languageOpen, setLanguageOpen] = useState(false);
+    const [active, setActive] = useState("home");
+
+    const onLanding = pathname === `/${lang}`;
 
     const navItems = [
-        { label: t.home, href: `/${lang}` },
-        { label: t.about, href: `/${lang}/about` },
-        { label: t.services, href: `/${lang}/services` },
-        { label: t.contact, href: `/${lang}/contact` },
+        { id: "home", label: t.home, href: `/${lang}` },
+        { id: "features", label: t.features, href: `/${lang}#features` },
+        { id: "about", label: t.about, href: `/${lang}#about` },
+        { id: "faq", label: t.faq, href: `/${lang}#faq` },
+        { id: "contact", label: t.contact, href: `/${lang}#contact` },
     ];
+
+    useEffect(() => {
+        if (!onLanding) return;
+        let raf = 0;
+        const update = () => {
+            raf = 0;
+            const line = window.innerHeight * 0.35;
+            let current = "home";
+            for (const id of SPY_IDS) {
+                const el = document.getElementById(id);
+                if (el && el.getBoundingClientRect().top <= line) current = id;
+            }
+            setActive(current);
+        };
+        const onScroll = () => {
+            if (!raf) raf = requestAnimationFrame(update);
+        };
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll);
+        return () => {
+            if (raf) cancelAnimationFrame(raf);
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", onScroll);
+        };
+    }, [onLanding]);
 
     const switchLanguage = (locale: Locale) => {
         const segments = pathname.split("/");
@@ -39,73 +66,57 @@ export function NavigationBar({ lang, t }: NavbarProps) {
         return segments.join("/") || `/${locale}`;
     };
 
-    const navLinkClass = (active: boolean) =>
-        cn("relative rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300", active ? "bg-brand/10 text-brand-text" : "text-fg-2 hover:bg-surface-hover hover:text-fg");
+    const isActive = (id: string) => onLanding && active === id;
+
+    const navLinkClass = (activeItem: boolean) =>
+        cn("relative rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300", activeItem ? "bg-brand/10 text-brand-text" : "text-fg-2 hover:bg-surface-hover hover:text-fg");
 
     return (
         <header className="sticky top-4 z-50 mx-auto w-[calc(100%-2rem)] max-w-7xl">
-            <nav className="glass-navbar relative flex h-18 items-center justify-between rounded-full px-5 lg:px-8">
-                {/* Logo */}
-                <Link
-                    href={`/${lang}`}
-                    className="relative z-10 text-2xl font-extrabold tracking-tight text-fg"
-                >
-                    Fibera<span className="text-brand">.</span>
+            <nav className="glass-navbar relative flex h-18 items-center justify-between rounded-full px-5 lg:px-8" aria-label="Main">
+                <Link href={`/${lang}`} className="relative z-10" aria-label="Fibera">
+                    <Logo />
                 </Link>
 
-                {/* Desktop navigation */}
                 <div className="relative z-10 hidden items-center gap-2 md:flex">
-                    {navItems.map((item) => {
-                        const isActive =
-                            item.href === `/${lang}`
-                                ? pathname === item.href
-                                : pathname.startsWith(item.href);
-
-                        return (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                className={navLinkClass(isActive)}
-                            >
-                                {item.label}
-                            </Link>
-                        );
-                    })}
+                    {navItems.map((item) => (
+                        <Link
+                            key={item.id}
+                            href={item.href}
+                            aria-current={isActive(item.id) ? "true" : undefined}
+                            className={navLinkClass(isActive(item.id))}
+                        >
+                            {item.label}
+                        </Link>
+                    ))}
                 </div>
 
-                {/* Desktop actions */}
-                <div className="relative z-10 hidden items-center gap-3 md:flex">
-                    {/* Language dropdown */}
-                    <div className="relative">
-                        <button
-                            type="button"
-                            onClick={() => setLanguageOpen(!languageOpen)}
-                            className="flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold text-fg-2 transition hover:bg-surface-hover hover:text-fg"
-                            aria-expanded={languageOpen}
+                <div className="relative z-10 hidden items-center gap-2 md:flex">
+                    <ThemeToggle label={t.toggleTheme} />
+
+                    <Dropdown>
+                        <Dropdown.Trigger
+                            aria-label={t.language}
+                            className="w-auto rounded-full border-transparent bg-transparent px-1 py-2 hover:border-transparent"
                         >
                             <Globe size={17} />
-                            {lang.toUpperCase()}
-                            <ChevronDown
-                                size={14}
-                                className={cn("transition-transform", languageOpen && "rotate-180")}
-                            />
-                        </button>
 
-                        {languageOpen && (
-                            <div className="absolute right-0 top-full mt-3 w-36 overflow-hidden rounded-2xl border border-line bg-surface p-1.5 shadow-panel backdrop-blur-2xl">
-                                {(["vi", "en"] as Locale[]).map((locale) => (
-                                    <Link
-                                        key={locale}
-                                        href={switchLanguage(locale)}
-                                        onClick={() => setLanguageOpen(false)}
-                                        className={cn("block rounded-xl px-3 py-2.5 text-sm transition", lang === locale ? "bg-brand/10 font-bold text-brand-text" : "text-fg-2 hover:bg-surface-hover hover:text-fg")}
-                                    >
-                                        {locale === "vi" ? "Tiếng Việt" : "English"}
-                                    </Link>
-                                ))}
-                            </div>
-                        )}
-                    </div>
+                            {lang.toUpperCase()}
+                        </Dropdown.Trigger>
+
+                        <Dropdown.Content className="right-0 left-auto w-36">
+                            {locales.map((locale) => (
+                                <Dropdown.MenuItem
+                                    key={locale}
+                                    href={switchLanguage(locale)}
+                                    active={lang === locale}
+                                >
+                                    {localeNames[locale]}
+                                </Dropdown.MenuItem>
+                            ))}
+                        </Dropdown.Content>
+                    </Dropdown>
+
 
                     <Link
                         href={`/${lang}/login`}
@@ -116,48 +127,57 @@ export function NavigationBar({ lang, t }: NavbarProps) {
 
                     <Link
                         href={`/${lang}/register`}
-                        className="rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-brand-ink shadow-glow transition hover:bg-brand-deep hover:shadow-glow"
+                        className="rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-brand-ink shadow-glow transition hover:bg-brand-deep"
                     >
                         {t.register}
                     </Link>
                 </div>
 
-                {/* Mobile menu button */}
-                <button
-                    type="button"
-                    onClick={() => setMobileOpen(!mobileOpen)}
-                    className="relative z-10 rounded-full p-2.5 text-fg transition hover:bg-surface-hover md:hidden"
-                    aria-label={mobileOpen ? "Close menu" : "Open menu"}
-                    aria-expanded={mobileOpen}
-                >
-                    {mobileOpen ? <X size={23} /> : <Menu size={23} />}
-                </button>
+                <div className="relative z-10 flex items-center gap-1 md:hidden">
+                    <ThemeToggle label={t.toggleTheme} />
+                    <button
+                        type="button"
+                        onClick={() => setMobileOpen(!mobileOpen)}
+                        className="rounded-full p-2.5 text-fg transition hover:bg-surface-hover"
+                        aria-label={mobileOpen ? t.closeMenu : t.openMenu}
+                        aria-expanded={mobileOpen}
+                    >
+                        {mobileOpen ? <X size={23} /> : <Menu size={23} />}
+                    </button>
+                </div>
             </nav>
 
-            {/* Mobile navigation */}
             {mobileOpen && (
-                <div className="glass-navbar mt-3 rounded-3xl p-4 md:hidden">
+                <div className="glass-navbar mt-3 rounded-xl p-4 md:hidden">
                     <div className="flex flex-col gap-1">
-                        {navItems.map((item) => {
-                            const active =
-                                item.href === `/${lang}`
-                                    ? pathname === item.href
-                                    : pathname.startsWith(item.href);
-
-                            return (
-                                <Link
-                                    key={item.href}
-                                    href={item.href}
-                                    onClick={() => setMobileOpen(false)}
-                                    className={navLinkClass(active)}
-                                >
-                                    {item.label}
-                                </Link>
-                            );
-                        })}
+                        {navItems.map((item) => (
+                            <Link
+                                key={item.id}
+                                href={item.href}
+                                onClick={() => setMobileOpen(false)}
+                                aria-current={isActive(item.id) ? "true" : undefined}
+                                className={navLinkClass(isActive(item.id))}
+                            >
+                                {item.label}
+                            </Link>
+                        ))}
                     </div>
 
                     <div className="my-3 border-t border-line" />
+
+                    <div className="mb-3 flex items-center gap-2">
+                        <Globe size={16} className="text-fg-muted" aria-hidden="true" />
+                        {locales.map((locale) => (
+                            <Link
+                                key={locale}
+                                href={switchLanguage(locale)}
+                                onClick={() => setMobileOpen(false)}
+                                className={cn("rounded-full px-3 py-1.5 text-xs font-semibold transition", lang === locale ? "bg-brand/10 text-brand-text" : "text-fg-2 hover:bg-surface-hover")}
+                            >
+                                {localeNames[locale]}
+                            </Link>
+                        ))}
+                    </div>
 
                     <div className="flex gap-3">
                         <Link
