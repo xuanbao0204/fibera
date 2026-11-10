@@ -1,0 +1,307 @@
+{
+    "navbar": {
+        "home": "Home",
+        "features": "Features",
+        "about": "About",
+        "faq": "FAQs",
+        "contact": "Contact",
+        "language": "Language",
+        "login": "Login",
+        "register": "Register",
+        "toggleTheme": "Switch theme",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu"
+    },
+    "home": {
+        "title": "Welcome to Fibera",
+        "description": "Our solutions are designed for you.",
+        "getStarted": "Get started"
+    },
+    "landing-page": {
+        "metadata": {
+            "title": "Fibera - Good room for rent",
+            "description": "Get connected to many house/room for rent."
+        },
+        "hero": {
+            "leading": "Welcome to Fibera - the smart room rental platform",
+            "badge": "⚡ Next-Gen Smart Room Rental Platform",
+            "titlePart1": "Find your dream space,",
+            "titlePart2": "feel completely at home",
+            "description": "Connect instantly with thousands of 100% verified rooms, mini-apartments, and studios. Transparent pricing, zero hidden fees, and hassle-free online viewing schedules.",
+            "search": {
+                "tabs": {
+                    "all": "All",
+                    "room": "Rooms",
+                    "apartment": "Studio / Mini-Apt",
+                    "shared": "Shared Room"
+                },
+                "locationLabel": "Location / Campus",
+                "locationPlaceholder": "Where do you want to live?",
+                "priceLabel": "Price Range",
+                "pricePlaceholder": "Any budget",
+                "priceOptions": {
+                    "under3m": "Under $120 / mo",
+                    "from3mTo5m": "$120 - $200 / mo",
+                    "from5mTo8m": "$200 - $320 / mo",
+                    "above8m": "Above $320 / mo"
+                },
+                "typeLabel": "Room Type",
+                "typePlaceholder": "Select room type",
+                "typeOptions": {
+                    "studio": "Self-contained Studio",
+                    "mezzanine": "With Mezzanine",
+                    "oneBed": "1-Bedroom",
+                    "twoBed": "2-Bedroom"
+                },
+                "searchButton": "Search Now",
+                "trendingLabel": "Trending searches:",
+                "trendingTags": [
+                    "Near Tech University",
+                    "Downtown District",
+                    "Private Balcony",
+                    "Pet Friendly",
+                    "Independent Access"
+                ]
+            },
+            "floatingCards": {
+                "verifiedTitle": "100% On-site Verified",
+                "verifiedSubtitle": "Real photos & accurate video tour",
+                "rating": "4.9/5",
+                "reviews": "(2,800+ reviews)",
+                "matchedRoom": "Balcony Studio Suite",
+                "pricePerMonth": "$175/month",
+                "district": "City Center • Fully Furnished"
+            },
+            "visualAlt": "Illustration of a cozy studio room"
+        },
+        "stats": {
+            "eyebrow": "Statistics",
+            "title": "Numbers speak for themselves",
+            "description": "Market data is continuously updated to help you find the right rental price.",
+            "verifiedRooms": "15,000+",
+            "verifiedRoomsLabel": "Verified Listings",
+            "happyTenants": "98%",
+            "happyTenantsLabel": "Tenant Satisfaction",
+            "savingFee": "$0",
+            "savingFeeLabel": "Hidden Broker Fees",
+            "aiMatch": "24/7",
+            "aiMatchLabel": "Smart AI Matching",
+            "chart": {
+                "title": "Average rental price",
+                "unit": "USD/month",
+                "areas": [
+                    {
+                        "label": "Cau Giay",
+                        "value": 158
+                    },
+                    {
+                        "label": "Dong Da",
+                        "value": 175
+                    },
+                    {
+                        "label": "Thanh Xuan",
+                        "value": 146
+                    },
+                    {
+                        "label": "Ha Dong",
+                        "value": 121
+                    },
+                    {
+                        "label": "Nam Tu Liem",
+                        "value": 150
+                    },
+                    {
+                        "label": "Hai Ba Trung",
+                        "value": 188
+                    }
+                ]
+            }
+        },
+        "features": {
+            "eyebrow": "Why Fibera",
+            "title": "Everything you need to rent with peace of mind",
+            "description": "From the first search to the day you get the keys, every step is simple, transparent and safe.",
+            "items": [
+                {
+                    "title": "Verified listings",
+                    "description": "Photos and details are checked on-site, so the room you see is the room you get."
+                },
+                {
+                    "title": "Honest pricing",
+                    "description": "Rent, deposit and utilities are shown upfront. No broker fees, no surprises."
+                },
+                {
+                    "title": "AI-moderated posts",
+                    "description": "Our AI reviews new posts and flags misleading or inappropriate content before it reaches you."
+                },
+                {
+                    "title": "Smart matching",
+                    "description": "Share your budget, area and lifestyle and get suggestions that actually fit."
+                },
+                {
+                    "title": "Online viewing schedule",
+                    "description": "Pick a time slot that works for both sides and book a viewing in a few taps."
+                },
+                {
+                    "title": "Direct conversations",
+                    "description": "Message landlords, ask questions in comments and keep everything in one place."
+                }
+            ]
+        },
+        "howItWorks": {
+            "eyebrow": "How it works",
+            "title": "Three simple steps to your new home",
+            "description": "No paperwork maze, no middlemen. Just a clear path from searching to moving in.",
+            "steps": [
+                {
+                    "title": "Search and filter",
+                    "description": "Tell us the area, budget and room type. We show verified rooms that match."
+                },
+                {
+                    "title": "Chat and book a viewing",
+                    "description": "Message the landlord, ask your questions and pick a viewing time online."
+                },
+                {
+                    "title": "Move in with confidence",
+                    "description": "Review the details, agree on the terms and settle into your new place."
+                }
+            ]
+        },
+        "audience": {
+            "eyebrow": "Made for both sides",
+            "title": "One platform for tenants and landlords",
+            "description": "Whether you are looking for a room or listing one, Fibera keeps things fast, fair and friendly.",
+            "tenant": {
+                "badge": "For tenants",
+                "title": "Find a place you will love",
+                "description": "Search for free and rent with confidence.",
+                "points": [
+                    "Browse verified rooms at no cost",
+                    "Compare options and save your favourites",
+                    "Post a room-seeking request and let landlords find you",
+                    "Comment and message landlords directly"
+                ],
+                "cta": "Start searching"
+            },
+            "landlord": {
+                "badge": "For landlords",
+                "title": "Fill your rooms, skip the hassle",
+                "description": "Manage everything in one tidy place.",
+                "points": [
+                    "Manage rooms, slots and prices in one dashboard",
+                    "Reach tenants who are searching right now",
+                    "Handle messages and your rental list with ease",
+                    "AI-checked posts help build trust"
+                ],
+                "cta": "List your room"
+            }
+        },
+        "faq": {
+            "eyebrow": "FAQ",
+            "title": "Questions? We have answers",
+            "description": "Can't find what you're looking for? Reach out and we'll gladly help.",
+            "items": [
+                {
+                    "question": "Is Fibera free for tenants?",
+                    "answer": "Yes. Searching, saving rooms and contacting landlords is free, and we never charge hidden broker fees."
+                },
+                {
+                    "question": "How are listings verified?",
+                    "answer": "Our team checks photos and key details on-site, so what you see on Fibera matches the real room."
+                },
+                {
+                    "question": "What does AI moderation do?",
+                    "answer": "An AI model reads new posts in context and flags the ones that look misleading or inappropriate so they can be reviewed."
+                },
+                {
+                    "question": "How do I book a viewing?",
+                    "answer": "Open a listing, choose an available time slot and send your request. The landlord will confirm the time with you."
+                },
+                {
+                    "question": "I'm a landlord. How do I post a room?",
+                    "answer": "Create a landlord account, add your room details, photos and price, then publish. You can update slots and prices any time."
+                }
+            ]
+        },
+        "cta": {
+            "title": "Ready to find a place that feels like home?",
+            "description": "Join Fibera today and start exploring verified rooms near you.",
+            "primary": "Create free account",
+            "secondary": "Browse rooms"
+        },
+        "contact": {
+            "eyebrow": "Contact",
+            "title": "Let's talk",
+            "description": "Questions, feedback or want to partner with us? Send a message and we'll reply as soon as we can.",
+            "info": {
+                "emailLabel": "Email",
+                "email": "hello@fibera.vn",
+                "phoneLabel": "Phone",
+                "phone": "+84 900 000 000",
+                "addressLabel": "Office",
+                "address": "Hanoi, Vietnam"
+            },
+            "form": {
+                "nameLabel": "Your name",
+                "namePlaceholder": "Jane Nguyen",
+                "emailLabel": "Email",
+                "emailPlaceholder": "you@example.com",
+                "messageLabel": "Message",
+                "messagePlaceholder": "How can we help?",
+                "submit": "Send message",
+                "success": "Thanks! Your message is on its way. We'll get back to you soon."
+            }
+        }
+    },
+    "login": {
+        "metadata": {
+            "title": "Fibera - Login",
+            "description": "Login to Fibera."
+        },
+        "title": "Login",
+        "id": "Email",
+        "password": "Password",
+        "role": "Role",
+        "forgot-password": "Forgot password?",
+        "other-action": "Didn't have account yet? ",
+        "register-link": "Register now",
+        "cta": "Login"
+    },
+    "register": {
+        "metadata": {
+            "title": "Fibera - Register new account",
+            "description": "Register to continue to Fibera."
+        },
+        "title": "Register",
+        "id": "Email",
+        "phone": "Phone number",
+        "password": "Password",
+        "confirm-password": "Confirm password",
+        "role": "Role",
+        "accept-term": "I agree with ",
+        "term": "Term of use",
+        "other-action": "Already have account? ",
+        "register-link": "Login",
+        "cta": "Register",
+        "validation": {
+            "email": "Invalid email address.",
+            "phone": "Invalid phone number.",
+            "identity": "Please enter an email or phone number.",
+            "password": "Password must contain at least 8 characters.",
+            "confirmPassword": "Passwords do not match.",
+            "role": "Please select a role.",
+            "acceptTerm": "You must accept the terms of service."
+        },
+        "roles": {
+            "tenant": "Tenant",
+            "landlord": "Landlord"
+        }
+    },
+    "footer": {
+        "tagline": "The friendly way to find and manage rooms for rent.",
+        "exploreTitle": "Explore",
+        "accountTitle": "Account",
+        "faqLabel": "FAQ",
+        "rights": "All rights reserved."
+    }
+}

@@ -1,0 +1,302 @@
+{
+    "navbar": {
+        "home": "Trang chủ",
+        "features": "Tính năng",
+        "about": "Giới thiệu",
+        "faq": "Câu hỏi thường gặp",
+        "contact": "Liên hệ",
+        "language": "Ngôn ngữ",
+        "login": "Đăng nhập",
+        "register": "Đăng ký",
+        "toggleTheme": "Đổi giao diện sáng/tối",
+        "openMenu": "Mở menu",
+        "closeMenu": "Đóng menu"
+    },
+    "landing-page": {
+        "metadata": {
+            "title": "Fibera - Phòng tốt",
+            "description": "Kết nối nhanh chóng với hàng ngàn phòng trọ, căn hộ mini và studio đã xác thực 100%. Giá thuê minh bạch, không phí môi giới, đặt lịch xem phòng trực tuyến tiện lợi."
+        },
+        "hero": {
+            "leading": "Chào mừng bạn đến với Fibera - nền tảng tìm kiếm phòng trọ",
+            "badge": "⚡ Nền tảng tìm trọ thông minh thế hệ mới",
+            "titlePart1": "Tìm căn phòng mơ ước,",
+            "titlePart2": "trọn vẹn cảm giác như ở nhà",
+            "description": "Kết nối nhanh chóng với hàng ngàn phòng trọ, căn hộ mini và studio đã xác thực 100%. Giá thuê minh bạch, không phí môi giới, đặt lịch xem phòng trực tuyến tiện lợi.",
+            "search": {
+                "tabs": {
+                    "all": "Tất cả",
+                    "room": "Phòng trọ",
+                    "apartment": "Căn hộ mini",
+                    "shared": "Ở ghép"
+                },
+                "locationLabel": "Địa điểm / Trường học",
+                "locationPlaceholder": "Bạn muốn thuê khu vực nào?",
+                "priceLabel": "Mức giá",
+                "pricePlaceholder": "Tất cả mức giá",
+                "priceOptions": {
+                    "under3m": "Dưới 3 triệu",
+                    "from3mTo5m": "3 - 5 triệu",
+                    "from5mTo8m": "5 - 8 triệu",
+                    "above8m": "Trên 8 triệu"
+                },
+                "typeLabel": "Loại phòng",
+                "typePlaceholder": "Chọn loại phòng",
+                "typeOptions": {
+                    "studio": "Studio khép kín",
+                    "mezzanine": "Có gác lửng",
+                    "oneBed": "1 Phòng ngủ",
+                    "twoBed": "2 Phòng ngủ"
+                },
+                "searchButton": "Tìm kiếm ngay",
+                "trendingLabel": "Tìm kiếm phổ biến:",
+                "trendingTags": [
+                    "Gần ĐH Bách Khoa",
+                    "Quận Cầu Giấy",
+                    "Có ban công",
+                    "Nuôi thú cưng",
+                    "Không chung chủ"
+                ]
+            },
+            "floatingCards": {
+                "verifiedTitle": "100% Xác minh thực tế",
+                "verifiedSubtitle": "Hình ảnh & video chuẩn thực địa",
+                "rating": "4.9/5",
+                "reviews": "(2,800+ đánh giá)",
+                "matchedRoom": "Phòng Studio Ban Công",
+                "pricePerMonth": "4.2 Tr/tháng",
+                "district": "Hà Nội • Đầy đủ tiện nghi"
+            },
+            "visualAlt": "Minh họa phòng studio ấm cúng"
+        },
+        "stats": {
+            "eyebrow": "Số liệu",
+            "title": "Con số nói lên chất lượng",
+            "description": "Dữ liệu thị trường được cập nhật liên tục để bạn thuê đúng giá.",
+            "verifiedRooms": "15,000+",
+            "verifiedRoomsLabel": "Phòng trọ đã xác thực",
+            "happyTenants": "98%",
+            "happyTenantsLabel": "Người thuê hài lòng",
+            "savingFee": "0đ",
+            "savingFeeLabel": "Phí môi giới ẩn",
+            "aiMatch": "24/7",
+            "aiMatchLabel": "Gợi ý AI thông minh",
+            "chart": {
+                "title": "Giá thuê trung bình",
+                "unit": "triệu/tháng",
+                "areas": [
+                    {
+                        "label": "Cầu Giấy",
+                        "value": 3.8
+                    },
+                    {
+                        "label": "Đống Đa",
+                        "value": 4.2
+                    },
+                    {
+                        "label": "Thanh Xuân",
+                        "value": 3.5
+                    },
+                    {
+                        "label": "Hà Đông",
+                        "value": 2.9
+                    },
+                    {
+                        "label": "Nam Từ Liêm",
+                        "value": 3.6
+                    },
+                    {
+                        "label": "Hai Bà Trưng",
+                        "value": 4.5
+                    }
+                ]
+            }
+        },
+        "features": {
+            "eyebrow": "Vì sao chọn Fibera",
+            "title": "Mọi thứ bạn cần để thuê trọ an tâm",
+            "description": "Từ lần tìm kiếm đầu tiên đến ngày nhận chìa khóa, mỗi bước đều đơn giản, minh bạch và an toàn.",
+            "items": [
+                {
+                    "title": "Tin đăng đã xác thực",
+                    "description": "Hình ảnh và thông tin được kiểm tra thực tế, phòng bạn thấy chính là phòng bạn nhận."
+                },
+                {
+                    "title": "Giá thuê minh bạch",
+                    "description": "Tiền phòng, tiền cọc và chi phí dịch vụ hiển thị rõ ràng. Không phí môi giới, không phát sinh."
+                },
+                {
+                    "title": "Bài đăng được AI kiểm duyệt",
+                    "description": "AI rà soát bài đăng mới và gắn cờ nội dung sai lệch hoặc không phù hợp trước khi đến tay bạn."
+                },
+                {
+                    "title": "Gợi ý thông minh",
+                    "description": "Chia sẻ ngân sách, khu vực và lối sống để nhận gợi ý thật sự phù hợp."
+                },
+                {
+                    "title": "Đặt lịch xem phòng online",
+                    "description": "Chọn khung giờ phù hợp với cả hai bên và đặt lịch xem phòng chỉ với vài chạm."
+                },
+                {
+                    "title": "Trao đổi trực tiếp",
+                    "description": "Nhắn tin với chủ trọ, đặt câu hỏi ở phần bình luận và gói gọn mọi thứ ở một nơi."
+                }
+            ]
+        },
+        "howItWorks": {
+            "eyebrow": "Cách hoạt động",
+            "title": "Ba bước đơn giản để có nhà mới",
+            "description": "Không thủ tục rườm rà, không trung gian. Chỉ là một lộ trình rõ ràng từ tìm kiếm đến dọn vào ở.",
+            "steps": [
+                {
+                    "title": "Tìm kiếm và lọc",
+                    "description": "Cho chúng tôi biết khu vực, ngân sách và loại phòng. Phòng đã xác thực phù hợp sẽ hiện ra ngay."
+                },
+                {
+                    "title": "Trò chuyện và đặt lịch xem",
+                    "description": "Nhắn tin với chủ trọ, hỏi mọi điều bạn cần và chọn giờ xem phòng trực tuyến."
+                },
+                {
+                    "title": "Dọn vào ở an tâm",
+                    "description": "Xem lại thông tin, thống nhất điều khoản và bắt đầu cuộc sống tại nơi ở mới."
+                }
+            ]
+        },
+        "audience": {
+            "eyebrow": "Dành cho cả hai phía",
+            "title": "Một nền tảng cho người thuê và chủ trọ",
+            "description": "Dù bạn đang tìm phòng hay đăng phòng, Fibera giúp mọi thứ nhanh chóng, công bằng và thân thiện.",
+            "tenant": {
+                "badge": "Dành cho người thuê",
+                "title": "Tìm nơi ở bạn sẽ yêu thích",
+                "description": "Tìm kiếm miễn phí và thuê phòng thật yên tâm.",
+                "points": [
+                    "Xem phòng đã xác thực hoàn toàn miễn phí",
+                    "So sánh và lưu lại những phòng bạn thích",
+                    "Đăng bài tìm phòng để chủ trọ chủ động liên hệ",
+                    "Bình luận và nhắn tin trực tiếp với chủ trọ"
+                ],
+                "cta": "Bắt đầu tìm phòng"
+            },
+            "landlord": {
+                "badge": "Dành cho chủ trọ",
+                "title": "Lấp đầy phòng trống, bớt nhọc nhằn",
+                "description": "Quản lý mọi thứ gọn gàng ở một nơi.",
+                "points": [
+                    "Quản lý phòng, lịch trống và giá thuê trong một bảng điều khiển",
+                    "Tiếp cận người đang tìm phòng ngay lúc này",
+                    "Xử lý tin nhắn và danh sách thuê dễ dàng",
+                    "Bài đăng được AI kiểm tra giúp tăng độ tin cậy"
+                ],
+                "cta": "Đăng phòng ngay"
+            }
+        },
+        "faq": {
+            "eyebrow": "Hỏi đáp",
+            "title": "Bạn có thắc mắc? Chúng tôi có câu trả lời",
+            "description": "Chưa tìm thấy điều bạn cần? Hãy liên hệ, chúng tôi luôn sẵn lòng hỗ trợ.",
+            "items": [
+                {
+                    "question": "Fibera có miễn phí cho người thuê không?",
+                    "answer": "Có. Tìm kiếm, lưu phòng và liên hệ chủ trọ đều miễn phí, và chúng tôi không thu phí môi giới ẩn."
+                },
+                {
+                    "question": "Tin đăng được xác thực như thế nào?",
+                    "answer": "Đội ngũ của chúng tôi kiểm tra hình ảnh và thông tin chính tại phòng, nên những gì bạn thấy trên Fibera khớp với thực tế."
+                },
+                {
+                    "question": "Kiểm duyệt bằng AI hoạt động ra sao?",
+                    "answer": "Mô hình AI đọc bài đăng mới theo ngữ cảnh và gắn cờ những bài có dấu hiệu sai lệch hoặc không phù hợp để được xem xét."
+                },
+                {
+                    "question": "Làm sao để đặt lịch xem phòng?",
+                    "answer": "Mở tin đăng, chọn khung giờ còn trống và gửi yêu cầu. Chủ trọ sẽ xác nhận thời gian với bạn."
+                },
+                {
+                    "question": "Tôi là chủ trọ, đăng phòng thế nào?",
+                    "answer": "Tạo tài khoản chủ trọ, thêm thông tin phòng, hình ảnh và giá thuê rồi đăng bài. Bạn có thể cập nhật lịch trống và giá bất cứ lúc nào."
+                }
+            ]
+        },
+        "cta": {
+            "title": "Sẵn sàng tìm nơi ở như ở nhà?",
+            "description": "Tham gia Fibera ngay hôm nay và khám phá những phòng trọ đã xác thực gần bạn.",
+            "primary": "Tạo tài khoản miễn phí",
+            "secondary": "Xem phòng ngay"
+        },
+        "contact": {
+            "eyebrow": "Liên hệ",
+            "title": "Trò chuyện cùng chúng tôi",
+            "description": "Có câu hỏi, góp ý hoặc muốn hợp tác? Hãy gửi lời nhắn, chúng tôi sẽ phản hồi sớm nhất có thể.",
+            "info": {
+                "emailLabel": "Email",
+                "email": "hello@fibera.vn",
+                "phoneLabel": "Điện thoại",
+                "phone": "+84 900 000 000",
+                "addressLabel": "Văn phòng",
+                "address": "Hà Nội, Việt Nam"
+            },
+            "form": {
+                "nameLabel": "Họ và tên",
+                "namePlaceholder": "Nguyễn Văn A",
+                "emailLabel": "Email",
+                "emailPlaceholder": "ban@example.com",
+                "messageLabel": "Lời nhắn",
+                "messagePlaceholder": "Chúng tôi có thể giúp gì cho bạn?",
+                "submit": "Gửi lời nhắn",
+                "success": "Cảm ơn bạn! Lời nhắn đã được gửi, chúng tôi sẽ phản hồi sớm."
+            }
+        }
+    },
+    "login": {
+        "metadata": {
+            "title": "Fibera - Đăng nhập",
+            "description": "Đăng nhập vào Fibera."
+        },
+        "title": "Đăng nhập",
+        "id": "Email",
+        "password": "Mật khẩu",
+        "role": "Vai trò",
+        "forgot-password": "Quên mật khẩu?",
+        "other-action": "Chưa có tải khoản? ",
+        "register-link": "Đăng ký ngay",
+        "cta": "Đăng nhập"
+    },
+    "register": {
+        "metadata": {
+            "title": "Fibera - Đăng ký tài khoản",
+            "description": "Đăng ký tài khoản Fibera."
+        },
+        "title": "Đăng ký",
+        "id": "Email",
+        "phone": "Số điện thoại",
+        "password": "Mật khẩu",
+        "confirm-password": "Nhập lại mật khẩu",
+        "role": "Vai trò",
+        "accept-term": "Tôi đồng ý với ",
+        "term": "Điều khoản sử dụng",
+        "other-action": "Đã có tải khoản? ",
+        "register-link": "Đăng nhập ngay",
+        "cta": "Đăng ký",
+        "validation": {
+            "email": "Email không hợp lệ.",
+            "phone": "Số điện thoại không hợp lệ.",
+            "identity": "Vui lòng nhập email hoặc số điện thoại.",
+            "password": "Mật khẩu phải có ít nhất 8 ký tự.",
+            "confirmPassword": "Mật khẩu xác nhận không khớp.",
+            "role": "Vui lòng chọn vai trò.",
+            "acceptTerm": "Bạn cần đồng ý với điều khoản sử dụng."
+        },
+        "roles": {
+            "tenant": "Người thuê",
+            "landlord": "Chủ trọ"
+        }
+    },
+    "footer": {
+        "tagline": "Cách thân thiện để tìm và quản lý phòng trọ.",
+        "exploreTitle": "Khám phá",
+        "accountTitle": "Tài khoản",
+        "faqLabel": "Câu hỏi thường gặp",
+        "rights": "Bảo lưu mọi quyền."
+    }
+}

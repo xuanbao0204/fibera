@@ -1,0 +1,154 @@
+.star-background {
+    --star-color: 255, 255, 255;
+    --star-opacity: 0.2;
+    --star-glow: rgba(255, 255, 255, 0.8);
+
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+
+}
+
+/* Dark theme */
+[data-theme="dark"] .star-background {
+    --star-color: 255, 255, 255;
+    --star-opacity: 0.2;
+    --star-glow: rgba(255, 255, 255, 0.8);
+}
+
+/* Light theme */
+[data-theme="light"] .star-background {
+    --star-color: 20, 55, 38;
+    --star-opacity: 0.12;
+    --star-glow: rgba(0, 245, 126, 0.35);
+}
+
+/* Small stars */
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: rgb(var(--star-color));
+    opacity: var(--star-opacity);
+    box-shadow: 0 0 8px var(--star-glow);
+    animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.15;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.5);
+    }
+}
+
+/* Shooting stars */
+.shooting-star {
+    position: absolute;
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(var(--star-color), 0.8),
+            transparent);
+    opacity: 0;
+    transform: rotate(-35deg);
+    animation: shooting 8s linear infinite;
+}
+
+.shooting-star-1 {
+    top: 15%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.shooting-star-2 {
+    top: 45%;
+    left: 30%;
+    animation-delay: 6s;
+}
+
+@keyframes shooting {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(-35deg);
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    15% {
+        opacity: 0;
+        transform: translate(-250px, 180px) rotate(-35deg);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Ambient glow */
+.ambient-glow {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.12;
+    animation: glow-float 12s ease-in-out infinite alternate;
+}
+
+.ambient-glow-1 {
+    top: -150px;
+    right: -100px;
+    background: #36c9a0;
+}
+
+.ambient-glow-2 {
+    bottom: -200px;
+    left: 10%;
+    background: #4d8cff;
+    animation-delay: -5s;
+}
+
+/* Light theme glow */
+[data-theme="light"] .ambient-glow {
+    opacity: 0.09;
+    filter: blur(110px);
+}
+
+[data-theme="light"] .ambient-glow-1 {
+    background: #36c9a0;
+}
+
+[data-theme="light"] .ambient-glow-2 {
+    background: #75aaff;
+}
+
+@keyframes glow-float {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-60px, 40px);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .star,
+    .shooting-star,
+    .ambient-glow {
+        animation: none;
+    }
+}

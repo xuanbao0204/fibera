@@ -1,26 +1,257 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-text: var(--brand-text);
+  --color-cream: var(--cream);
+  --color-fg: var(--fg);
+  --color-fg-2: var(--fg-2);
+  --color-fg-muted: var(--fg-muted);
+  --color-pos: var(--pos);
+  --color-neg: var(--neg);
+  --radius-panel: 1rem;
+  --radius-card: 1.5rem;
+
+  --font-nunito-family: var(--font-nunito-family);
+  --font-nunito: var(--font-nunito-family);
+  --font-nunito-sans: var(--font-nunito-sans-family);
+
+  --shadow-glow: var(--glow);
+  --shadow-panel: var(--panel-shadow);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Background & surfaces */
+  --bg: #080D0B;
+  --surface: #111B16;
+  --surface-hover: #1B2A22;
+  --line: rgba(211, 238, 222, 0.12);
+
+  /* Brand - Emerald */
+  --brand: #009c1a;
+  --brand-deep: #016d13;
+  --brand-ink: #dbffd3;
+  --brand-text: #4DE3A3;
+
+  /* Neutral */
+  --cream: #F3EAD2;
+  --fg: #F2F7F3;
+  --fg-2: #B5C8BC;
+  --fg-muted: #82958A;
+
+  /* Semantic */
+  --pos: #4DE3A3;
+  --neg: #FF7474;
+
+  /* Navbar */
+  --nav-bg: rgba(13, 22, 17, 0.72);
+
+  /* Effects */
+  --glow: 0 0 34px rgba(77, 227, 163, 0.22);
+  --panel-shadow: 0 30px 90px -30px rgba(0, 0, 0, 0.8);
+  --dot: rgba(255, 255, 255, 0.055);
+  --grain: 0.045;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Background & surfaces */
+  --bg: #F8F6EF;
+  --surface: #FFFFFF;
+  --surface-hover: #EAF4ED;
+  --line: rgba(20, 55, 38, 0.12);
+
+  /* Brand - Forest Emerald */
+  --brand: #16845B;
+  --brand-deep: #116B49;
+  --brand-ink: #FFFFFF;
+  --brand-text: #116B49;
+
+  /* Neutral */
+  --cream: #EFE3C2;
+  --fg: #17251D;
+  --fg-2: #52665A;
+  --fg-muted: #829087;
+
+  /* Semantic */
+  --pos: #16845B;
+  --neg: #D9364F;
+
+  /* Navbar */
+  --nav-bg: rgba(255, 255, 255, 0.65);
+
+  /* Effects */
+  --glow: 0 0 34px rgba(22, 132, 91, 0.16);
+  --panel-shadow: 0 24px 70px -30px rgba(31, 59, 42, 0.2);
+  --dot: rgba(20, 55, 38, 0.055);
+  --grain: 0.025;
+}
+
+
+html {
+  font-family: var(--font-nunito-family), sans-serif;
+  line-height: 1.5;
+  text-align: justify;
+  min-width: 320px;
+  scroll-padding-top: 6rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-attachment: fixed;
+  color: var(--fg);
+  font-family: var(--font-nunito-family);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: var(--grain);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ===== Primitives ===== */
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  backdrop-filter: blur(14px);
+  transition: background 0.3s, transform 0.3s, border-color 0.3s;
+}
+
+.glass-hover:hover {
+  background: var(--surface-hover);
+  transform: translateY(-3px);
+}
+
+.micro {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--fg-muted);
+}
+
+/* ===== Motion ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+.bar {
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.in .bar {
+  transform: scaleY(1);
+}
+
+@keyframes breathe {
+
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+
+  15%,
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(520%);
+    opacity: 0;
+  }
+}
+
+.animate-breathe {
+  animation: breathe 6s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-scan {
+  animation: scan 3.5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .reveal,
+  .bar {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .animate-breathe,
+  .animate-float,
+  .animate-scan {
+    animation: none;
+  }
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }
