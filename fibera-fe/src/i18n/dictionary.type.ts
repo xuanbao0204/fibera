@@ -25,3 +25,13 @@ export type ContactMessages = Dictionary["landing-page"]["contact"];
 export type LoginMessages = Dictionary["login"];
 
 export type RegisterMessages = Dictionary["register"];
+
+export type RoomFeedMessage = Dictionary["room-feed"];
+
+export type RoomsFilterMessage = Dictionary['room-feed']["filters"];
+
+export type EnumMessages = Dictionary['enums'];
+
+export type RoomDetailMessage = Dictionary["room-detail"];
+
+export type CommonMessage = Dictionary['common'];

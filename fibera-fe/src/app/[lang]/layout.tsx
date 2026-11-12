@@ -15,6 +15,7 @@ import { StarBackground } from "@/components/layout/StarBackground";
 import { THEME_STORAGE_KEY } from "@/libs/theme";
 import { Footer } from "@/components/layout/Footer";
 import Script from "next/script";
+import { Suspense } from "react";
 
 const themeScript = `try{var t=localStorage.getItem("${THEME_STORAGE_KEY}");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}`;
 
@@ -72,7 +73,9 @@ export default async function RootLayout({
             <StarBackground />
           </div>
 
-          <NavigationBar lang={lang} t={dictionary.navbar} />
+          <Suspense fallback={<div className="h-20" aria-hidden="true" />}>
+            <NavigationBar lang={lang} t={dictionary.navbar} />
+          </Suspense>
 
           {children}
 
