@@ -1,9 +1,8 @@
 {
     "navbar": {
         "home": "Home",
-        "features": "Features",
+        "view-rooms": "View rooms",
         "about": "About",
-        "faq": "FAQs",
         "contact": "Contact",
         "language": "Language",
         "login": "Login",
@@ -11,11 +10,6 @@
         "toggleTheme": "Switch theme",
         "openMenu": "Open menu",
         "closeMenu": "Close menu"
-    },
-    "home": {
-        "title": "Welcome to Fibera",
-        "description": "Our solutions are designed for you.",
-        "getStarted": "Get started"
     },
     "landing-page": {
         "metadata": {
@@ -295,6 +289,367 @@
         "roles": {
             "tenant": "Tenant",
             "landlord": "Landlord"
+        }
+    },
+    "room-feed": {
+        "title": "Find a Room",
+        "hero": {
+            "eyebrow": "FIBERA · RENTAL DISCOVERY",
+            "title": "Find a place to live",
+            "titleHighlight": "that feels right for you.",
+            "description": "Explore hundreds of rental rooms and apartments. Filter by location, budget, and amenities to find a place that suits your needs."
+        },
+        "stats": {
+            "listings": "Sample Listings",
+            "amenities": "Filterable Amenities"
+        },
+        "search": {
+            "placeholder": "Search by room name, street, district, or city...",
+            "ariaLabel": "Search rental rooms",
+            "submit": "Search",
+            "clear": "Clear search"
+        },
+        "sort": {
+            "recommended": "Recommended",
+            "newest": "Newest First",
+            "price-asc": "Price: Low to High",
+            "price-desc": "Price: High to Low",
+            "area-desc": "Largest Area"
+        },
+        "empty": {
+            "title": "No matching rooms found",
+            "description": "We couldn't find any listings matching your current search criteria. Try changing your keywords or adjusting your filters.",
+            "clearFilters": "Clear filters"
+        },
+        "pagination": {
+            "page": "Page",
+            "previous": "Previous page",
+            "next": "Next page",
+            "pageLabel": "Page "
+        },
+        "results": {
+            "title": "Rooms for You",
+            "summary": "Showing {from}–{to} of {total} rooms",
+            "sortLabel": "Sort by",
+            "filterButton": "Filters"
+        },
+        "saved": {
+            "title": "Saved Rooms",
+            "description": {
+                "one": "You have saved {count} room",
+                "other": "You have saved {count} rooms"
+            }
+        },
+        "activeFilters": {
+            "title": "Active Filters:",
+            "price": "Rental Price",
+            "amenities": {
+                "one": "{count} amenity",
+                "other": "{count} amenities"
+            }
+        },
+        "card": {
+            "saved": {
+                "save": "Save listing",
+                "unsave": "Remove from saved"
+            },
+            "status": {
+                "published": "Published",
+                "unpublished": "Unpublished"
+            },
+            "furnished": {
+                "fully": "Fully Furnished",
+                "basic": "Basic Furnishings"
+            },
+            "details": {
+                "capacity": "Occupancy",
+                "person": "people"
+            },
+            "landlord": {
+                "label": "Landlord"
+            },
+            "price": {
+                "perMonth": "/ month",
+                "period": {
+                    "MONTH": "/ month",
+                    "DAY": "/ day"
+                },
+                "deposit": "Deposit"
+            }
+        },
+        "filters": {
+            "title": "Search Filters",
+            "clear": "Clear Filters",
+            "location": {
+                "title": "Location",
+                "allCities": "All Locations",
+                "district": "District",
+                "allDistricts": "All Districts"
+            },
+            "roomType": {
+                "all": "All Property Types"
+            },
+            "layout": {
+                "all": "All Layouts"
+            },
+            "price": {
+                "title": "Rental Price Range",
+                "from": "Min (VND)",
+                "to": "Max (VND)"
+            },
+            "area": {
+                "title": "Floor Area (m²)",
+                "from": "Min",
+                "to": "Max"
+            },
+            "other": {
+                "title": "Additional Criteria"
+            },
+            "actions": {
+                "showResults": "Show {count} Rooms"
+            }
+        }
+    },
+    "enums": {
+        "roomType": {
+            "MINI_APARTMENT": "Mini Apartment",
+            "TRADITIONAL_ROOM": "Traditional Rental Room",
+            "HOMESTAY": "Homestay",
+            "WHOLE_HOUSE": "Entire House"
+        },
+        "roomLayout": {
+            "STUDIO": "Studio",
+            "ONE_BEDROOM": "1 Bedroom",
+            "TWO_BEDROOM": "2 Bedrooms",
+            "SHARED_ROOM": "Shared Accommodation"
+        },
+        "amenity": {
+            "AIR_CONDITIONING": "Air Conditioning",
+            "WATER_HEATER": "Water Heater",
+            "BALCONY": "Balcony",
+            "BED": "Bed",
+            "WARDROBE": "Wardrobe",
+            "DESK": "Work Desk",
+            "SOFA": "Sofa",
+            "TV": "TV",
+            "REFRIGERATOR": "Refrigerator",
+            "WIFI": "Wi-Fi",
+            "PRIVATE_BATHROOM": "Private Bathroom",
+            "KITCHEN": "Private Kitchen",
+            "WASHING_MACHINE": "Washing Machine",
+            "PARKING": "Parking",
+            "ELEVATOR": "Elevator",
+            "CAMERA": "Security Camera",
+            "FINGERPRINT_LOCK": "Fingerprint Lock",
+            "FIRE_SAFETY": "Fire Safety",
+            "FREE_HOURS": "Flexible Access Hours",
+            "PET_FRIENDLY": "Pet-Friendly"
+        },
+        "amenityGroup": {
+            "comfort": "Comfort",
+            "furniture": "Furniture",
+            "utility": "Utilities",
+            "security": "Security",
+            "policy": "Policies"
+        },
+        "promotionCode": {
+            "STUDENT": "Student discount",
+            "FIRST_MONTH": "First-month discount",
+            "LONG_TERM": "Long-term lease offer",
+            "NEW_TENANT": "New tenant offer"
+        }
+    },
+    "common": {
+        "actions": {
+            "clearFilters": "Clear Filters",
+            "close": "Close",
+            "viewDetails": "View Details"
+        },
+        "terms": {
+            "roomType": "Property Type",
+            "layout": "Layout",
+            "area": "Floor Area",
+            "amenities": "Amenities",
+            "furnished": "Furnished",
+            "verifiedRoom": "Verified Room",
+            "verifiedLandlord": "Verified Landlord",
+            "provinceCity": "Province / City"
+        }
+    },
+    "room-detail": {
+        "title": "Details",
+        "breadcrumb": {
+            "ariaLabel": "Breadcrumb",
+            "home": "Home",
+            "rooms": "Find rooms"
+        },
+        "actions": {
+            "backToList": "Back to room list",
+            "save": "Save room",
+            "saved": "Saved",
+            "contact": "Contact",
+            "viewOnMap": "View on Google Maps"
+        },
+        "badges": {
+            "approved": "Verified listing"
+        },
+        "overview": {
+            "title": "Room overview",
+            "description": "Basic information about the rental space.",
+            "maxOccupants": "Max occupants",
+            "occupants": {
+                "one": "{count} person",
+                "other": "{count} people"
+            },
+            "furnished": "Furnishing",
+            "furnishedValue": {
+                "fully": "Fully furnished",
+                "basic": "Basic furnishing"
+            },
+            "listingStatus": "Listing status",
+            "statusValue": {
+                "published": "Visible",
+                "unpublished": "Hidden"
+            }
+        },
+        "about": {
+            "title": "Description",
+            "description": "Information provided by the landlord.",
+            "empty": "The landlord has not added a description yet."
+        },
+        "amenities": {
+            "title": "Room amenities",
+            "description": {
+                "one": "{count} amenity provided.",
+                "other": "{count} amenities provided."
+            },
+            "empty": "No amenity information yet."
+        },
+        "pricing": {
+            "title": "Rental costs",
+            "description": "Fees provided by the landlord.",
+            "rent": "Monthly rent",
+            "rentPeriod": "Paid monthly",
+            "perMonth": "/ month",
+            "period": {
+                "MONTH": "/ month",
+                "DAY": "/ day"
+            },
+            "deposit": "Security deposit",
+            "electricity": "Electricity rate",
+            "perKwh": "{price} / kWh",
+            "water": "Water rate",
+            "serviceFee": "Service fee",
+            "free": "Free",
+            "note": "Please confirm electricity, water and service fees with the landlord before signing the contract.",
+            "estimate": {
+                "title": "Estimated move-in cost",
+                "description": "Includes the promotions you qualify for.",
+                "leaseMonths": "Lease length",
+                "months": {
+                    "one": "{count} month",
+                    "other": "{count} months"
+                },
+                "student": "I'm a student (with a student ID)",
+                "firstMonthRent": "First month's rent",
+                "deposit": "Security deposit",
+                "moveInTotal": "Due at move-in",
+                "ongoingRent": "From month {month}",
+                "totalSavings": {
+                    "one": "You save over a {count}-month lease",
+                    "other": "You save over a {count}-month lease"
+                },
+                "notApplied": "Not applied (conditions not met): {names}",
+                "note": "Excludes electricity, water and service fees. The landlord confirms the final amount when the contract is signed.",
+                "dayTotal": "Total for one night",
+                "dayTitle": "Total cost for one night",
+                "dayRent": "One night's rent",
+                "depositPaid": "Deposit paid (deducted from total)",
+                "dayRemaining": "Remaining balance",
+                "depositExcessNote": "Any deposit above the total is refunded at check-out.",
+                "caution": "Not include costs incurred due to damage"
+            }
+        },
+        "location": {
+            "title": "Location",
+            "description": "Address provided by the landlord."
+        },
+        "landlord": {
+            "title": "Landlord information",
+            "description": "Details of the account that posted this listing.",
+            "role": "Landlord",
+            "identityVerified": "Identity verified"
+        },
+        "safety": {
+            "title": "Safety tips when renting",
+            "description": "View the room in person, verify the right to lease and read the contract carefully before paying a deposit."
+        },
+        "related": {
+            "eyebrow": "Discover more",
+            "title": "Similar rooms",
+            "description": "Other options that may suit you.",
+            "viewAll": "View all rooms"
+        },
+        "promotion": {
+            "title": "Active promotions",
+            "description": "Discounts offered by the landlord for this room.",
+            "benefit": {
+                "PERCENT_OFF": "{percent}% off rent",
+                "AMOUNT_OFF": "{amount} off rent per month",
+                "FREE_MONTHS": {
+                    "one": "{count} month of free rent",
+                    "other": "{count} months of free rent"
+                },
+                "DEPOSIT_OFF": "{percent}% off the security deposit",
+                "forMonths": {
+                    "one": "for the first month",
+                    "other": "for the first {count} months"
+                }
+            },
+            "condition": {
+                "minLeaseMonths": {
+                    "one": "Minimum {count}-month lease",
+                    "other": "Minimum {count}-month lease"
+                },
+                "studentProof": "Valid student ID required",
+                "validUntil": "Valid until {date}",
+                "noExpiry": "No expiry date"
+            }
+        },
+        "contactPanel": {
+            "price": {
+                "title": "Monthly Rent",
+                "period": {
+                    "MONTH": "/ month",
+                    "DAY": "/ day"
+                },
+                "deposit": "Security Deposit"
+            },
+            "landlord": {
+                "role": "Landlord",
+                "verifiedMessage": "The landlord's identity has been verified."
+            },
+            "details": {
+                "area": "Floor Area",
+                "capacity": "Occupancy",
+                "person": "people",
+                "furnished": "Furnishing",
+                "fullyFurnished": "Fully Furnished",
+                "basicFurnished": "Basic Furnishings"
+            },
+            "actions": {
+                "call": "Call {phone}",
+                "saved": "Saved",
+                "save": "Save this room"
+            },
+            "notice": {
+                "title": "Important Note",
+                "description": "Verify the room details and communicate directly with the landlord before making a deposit."
+            },
+            "schedule": {
+                "title": "Schedule a Viewing",
+                "description": "Contact the landlord to arrange a time for an in-person viewing."
+            }
         }
     },
     "footer": {

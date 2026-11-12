@@ -1,9 +1,8 @@
 {
     "navbar": {
         "home": "Trang chủ",
-        "features": "Tính năng",
+        "view-rooms": "Xem phòng",
         "about": "Giới thiệu",
-        "faq": "Câu hỏi thường gặp",
         "contact": "Liên hệ",
         "language": "Ngôn ngữ",
         "login": "Đăng nhập",
@@ -290,6 +289,365 @@
         "roles": {
             "tenant": "Người thuê",
             "landlord": "Chủ trọ"
+        }
+    },
+    "room-feed": {
+        "title": "Tìm phòng trọ",
+        "hero": {
+            "eyebrow": "FIBERA · KHÁM PHÁ PHÒNG TRỌ",
+            "title": "Tìm không gian sống",
+            "titleHighlight": "phù hợp với bạn.",
+            "description": "Khám phá hàng trăm lựa chọn phòng trọ và căn hộ. Lọc theo khu vực, ngân sách và tiện ích để tìm nơi ở phù hợp nhất."
+        },
+        "stats": {
+            "listings": "Tin đăng mẫu",
+            "amenities": "Tiện ích hỗ trợ lọc"
+        },
+        "search": {
+            "placeholder": "Tìm theo tên phòng, đường, quận hoặc thành phố...",
+            "ariaLabel": "Tìm kiếm phòng trọ",
+            "submit": "Tìm kiếm",
+            "clear": "Xóa từ khóa"
+        },
+        "sort": {
+            "recommended": "Đề xuất",
+            "newest": "Mới nhất",
+            "price-asc": "Giá thấp đến cao",
+            "price-desc": "Giá cao đến thấp",
+            "area-desc": "Diện tích lớn nhất"
+        },
+        "empty": {
+            "title": "Không tìm thấy phòng phù hợp",
+            "description": "Không có tin đăng nào phù hợp với điều kiện tìm kiếm hiện tại. Hãy thử thay đổi từ khóa hoặc nới lỏng một số bộ lọc.",
+            "clearFilters": "Xóa bộ lọc"
+        },
+        "pagination": {
+            "page": "Trang",
+            "previous": "Trang trước",
+            "next": "Trang tiếp theo",
+            "pageLabel": "Trang {page}"
+        },
+        "results": {
+            "title": "Phòng trọ dành cho bạn",
+            "summary": "Hiển thị {from}–{to} trong tổng số {total} phòng",
+            "sortLabel": "Sắp xếp",
+            "filterButton": "Bộ lọc"
+        },
+        "saved": {
+            "title": "Phòng đã lưu",
+            "description": {
+                "one": "Bạn đã lưu {count} phòng",
+                "other": "Bạn đã lưu {count} phòng"
+            }
+        },
+        "activeFilters": {
+            "title": "Bộ lọc đang áp dụng:",
+            "price": "Giá thuê",
+            "amenities": {
+                "one": "{count} tiện ích",
+                "other": "{count} tiện ích"
+            }
+        },
+        "card": {
+            "saved": {
+                "save": "Lưu phòng",
+                "unsave": "Bỏ lưu phòng"
+            },
+            "status": {
+                "published": "Đang hiển thị",
+                "unpublished": "Ngừng hiển thị"
+            },
+            "furnished": {
+                "fully": "Đầy đủ nội thất",
+                "basic": "Nội thất cơ bản"
+            },
+            "details": {
+                "capacity": "Sức chứa",
+                "person": "người"
+            },
+            "landlord": {
+                "label": "Chủ cho thuê"
+            },
+            "price": {
+                "period": {
+                    "MONTH": "/ tháng",
+                    "DAY": "/ ngày"
+                },
+                "deposit": "Cọc"
+            }
+        },
+        "filters": {
+            "title": "Bộ lọc tìm kiếm",
+            "clear": "Xóa lọc",
+            "location": {
+                "title": "Khu vực",
+                "allCities": "Tất cả khu vực",
+                "district": "Quận / Huyện",
+                "allDistricts": "Tất cả quận / huyện"
+            },
+            "roomType": {
+                "all": "Tất cả loại hình"
+            },
+            "layout": {
+                "all": "Tất cả bố cục"
+            },
+            "price": {
+                "title": "Khoảng giá thuê",
+                "from": "Từ (VNĐ)",
+                "to": "Đến (VNĐ)"
+            },
+            "area": {
+                "title": "Diện tích (m²)",
+                "from": "Từ",
+                "to": "Đến"
+            },
+            "other": {
+                "title": "Tiêu chí khác"
+            },
+            "actions": {
+                "showResults": "Hiển thị {count} phòng"
+            }
+        }
+    },
+    "enums": {
+        "roomType": {
+            "MINI_APARTMENT": "Căn hộ mini",
+            "TRADITIONAL_ROOM": "Phòng trọ truyền thống",
+            "HOMESTAY": "Homestay",
+            "WHOLE_HOUSE": "Nhà nguyên căn"
+        },
+        "roomLayout": {
+            "STUDIO": "Studio",
+            "ONE_BEDROOM": "1 phòng ngủ",
+            "TWO_BEDROOM": "2 phòng ngủ",
+            "SHARED_ROOM": "Ở ghép"
+        },
+        "amenity": {
+            "AIR_CONDITIONING": "Máy lạnh",
+            "WATER_HEATER": "Máy nước nóng",
+            "BALCONY": "Ban công",
+            "BED": "Giường",
+            "WARDROBE": "Tủ quần áo",
+            "DESK": "Bàn làm việc",
+            "SOFA": "Sofa",
+            "TV": "Tivi",
+            "REFRIGERATOR": "Tủ lạnh",
+            "WIFI": "Wifi",
+            "PRIVATE_BATHROOM": "WC riêng",
+            "KITCHEN": "Bếp riêng",
+            "WASHING_MACHINE": "Máy giặt",
+            "PARKING": "Chỗ để xe",
+            "ELEVATOR": "Thang máy",
+            "CAMERA": "Camera an ninh",
+            "FINGERPRINT_LOCK": "Khóa vân tay",
+            "FIRE_SAFETY": "Phòng cháy chữa cháy",
+            "FREE_HOURS": "Giờ giấc tự do",
+            "PET_FRIENDLY": "Cho nuôi thú cưng"
+        },
+        "amenityGroup": {
+            "comfort": "Tiện nghi",
+            "furniture": "Nội thất",
+            "utility": "Tiện ích",
+            "security": "An ninh",
+            "policy": "Quy định"
+        },
+        "promotionCode": {
+            "STUDENT": "Giảm giá sinh viên",
+            "FIRST_MONTH": "Giảm giá tháng đầu",
+            "LONG_TERM": "Ưu đãi thuê dài hạn",
+            "NEW_TENANT": "Ưu đãi khách mới"
+        }
+    },
+    "common": {
+        "actions": {
+            "clearFilters": "Xóa bộ lọc",
+            "close": "Đóng",
+            "viewDetails": "Xem chi tiết"
+        },
+        "terms": {
+            "roomType": "Loại phòng",
+            "layout": "Bố cục",
+            "area": "Diện tích",
+            "amenities": "Tiện ích",
+            "furnished": "Có nội thất",
+            "verifiedRoom": "Phòng đã xác minh",
+            "verifiedLandlord": "Chủ trọ đã xác minh",
+            "provinceCity": "Tỉnh / Thành phố"
+        }
+    },
+    "room-detail": {
+        "title": "Chi tiết",
+        "breadcrumb": {
+            "ariaLabel": "Đường dẫn",
+            "home": "Trang chủ",
+            "rooms": "Tìm phòng"
+        },
+        "actions": {
+            "backToList": "Quay lại danh sách phòng",
+            "save": "Lưu phòng",
+            "saved": "Đã lưu",
+            "contact": "Liên hệ",
+            "viewOnMap": "Xem trên Google Maps"
+        },
+        "badges": {
+            "approved": "Đã kiểm duyệt"
+        },
+        "overview": {
+            "title": "Tổng quan phòng",
+            "description": "Thông tin cơ bản về không gian cho thuê.",
+            "maxOccupants": "Sức chứa tối đa",
+            "occupants": {
+                "one": "{count} người",
+                "other": "{count} người"
+            },
+            "furnished": "Nội thất",
+            "furnishedValue": {
+                "fully": "Đầy đủ nội thất",
+                "basic": "Nội thất cơ bản"
+            },
+            "listingStatus": "Tình trạng tin",
+            "statusValue": {
+                "published": "Đang hiển thị",
+                "unpublished": "Không hiển thị"
+            }
+        },
+        "about": {
+            "title": "Mô tả chi tiết",
+            "description": "Thông tin do chủ trọ cung cấp.",
+            "empty": "Chủ trọ chưa cập nhật mô tả."
+        },
+        "amenities": {
+            "title": "Tiện ích phòng",
+            "description": {
+                "one": "{count} tiện ích được cung cấp.",
+                "other": "{count} tiện ích được cung cấp."
+            },
+            "empty": "Chưa có thông tin tiện ích."
+        },
+        "pricing": {
+            "title": "Chi phí thuê phòng",
+            "description": "Các khoản phí được chủ trọ cung cấp.",
+            "rent": "Tiền thuê phòng",
+            "rentPeriod": "Thanh toán theo tháng",
+            "period": {
+                "MONTH": "/ tháng",
+                "DAY": "/ đêm"
+            },
+            "deposit": "Tiền đặt cọc",
+            "electricity": "Giá điện",
+            "perKwh": "{price} / kWh",
+            "water": "Giá nước",
+            "serviceFee": "Phí dịch vụ",
+            "free": "Miễn phí",
+            "note": "Các khoản phí điện, nước và dịch vụ cần được xác nhận lại với chủ trọ trước khi ký hợp đồng.",
+            "estimate": {
+                "title": "Ước tính chi phí khi vào ở",
+                "description": "Đã trừ các ưu đãi bạn đủ điều kiện nhận.",
+                "leaseMonths": "Thời gian thuê",
+                "months": {
+                    "one": "{count} tháng",
+                    "other": "{count} tháng"
+                },
+                "student": "Tôi là sinh viên (có thẻ sinh viên)",
+                "firstMonthRent": "Tiền thuê tháng đầu",
+                "deposit": "Tiền đặt cọc",
+                "moveInTotal": "Cần thanh toán khi vào ở",
+                "ongoingRent": "Từ tháng thứ {month}",
+                "totalSavings": {
+                    "one": "Tiết kiệm trong {count} tháng thuê",
+                    "other": "Tiết kiệm trong {count} tháng thuê"
+                },
+                "notApplied": "Chưa áp dụng (chưa đủ điều kiện): {names}",
+                "note": "Chưa gồm tiền điện, nước và phí dịch vụ. Số tiền cuối cùng do chủ trọ xác nhận khi ký hợp đồng.",
+                "dayTitle": "Tổng chi phí cho 1 đêm",
+                "dayRent": "Tiền thuê 1 đêm",
+                "dayTotal": "Tổng tiền 1 đêm",
+                "depositPaid": "Đã đặt cọc (trừ vào tổng)",
+                "dayRemaining": "Còn lại phải thanh toán",
+                "depositExcessNote": "Phần tiền cọc vượt quá tổng tiền sẽ được hoàn lại khi trả phòng.",
+                "caution": "Không bao gồm các chi phí phát sinh do hư hại"
+            }
+        },
+        "location": {
+            "title": "Vị trí phòng",
+            "description": "Địa chỉ do chủ trọ cung cấp."
+        },
+        "landlord": {
+            "title": "Thông tin chủ trọ",
+            "description": "Thông tin tài khoản đăng tin.",
+            "role": "Chủ cho thuê",
+            "identityVerified": "Đã xác minh danh tính"
+        },
+        "safety": {
+            "title": "Lưu ý an toàn khi thuê phòng",
+            "description": "Bạn nên xem phòng trực tiếp, xác minh quyền cho thuê và đọc kỹ hợp đồng trước khi chuyển tiền đặt cọc."
+        },
+        "related": {
+            "eyebrow": "Khám phá thêm",
+            "title": "Phòng trọ tương tự",
+            "description": "Những lựa chọn khác có thể phù hợp với bạn.",
+            "viewAll": "Xem tất cả phòng"
+        },
+        "promotion": {
+            "title": "Ưu đãi đang áp dụng",
+            "description": "Các chương trình giảm giá do chủ trọ cung cấp cho phòng này.",
+            "benefit": {
+                "PERCENT_OFF": "Giảm {percent}% tiền thuê",
+                "AMOUNT_OFF": "Giảm {amount} tiền thuê mỗi tháng",
+                "FREE_MONTHS": {
+                    "one": "Miễn phí {count} tháng tiền thuê",
+                    "other": "Miễn phí {count} tháng tiền thuê"
+                },
+                "DEPOSIT_OFF": "Giảm {percent}% tiền đặt cọc",
+                "forMonths": {
+                    "one": "trong {count} tháng đầu",
+                    "other": "trong {count} tháng đầu"
+                }
+            },
+            "condition": {
+                "minLeaseMonths": {
+                    "one": "Thuê tối thiểu {count} tháng",
+                    "other": "Thuê tối thiểu {count} tháng"
+                },
+                "studentProof": "Cần thẻ sinh viên hợp lệ",
+                "validUntil": "Áp dụng đến {date}",
+                "noExpiry": "Không giới hạn thời gian"
+            }
+        },
+        "contactPanel": {
+            "price": {
+                "title": "Giá thuê mỗi tháng",
+                "period": {
+                    "MONTH": "/ tháng",
+                    "DAY": "/ đêm"
+                },
+                "deposit": "Tiền cọc"
+            },
+            "landlord": {
+                "role": "Chủ cho thuê",
+                "verifiedMessage": "Chủ trọ đã xác minh danh tính."
+            },
+            "details": {
+                "area": "Diện tích",
+                "capacity": "Sức chứa",
+                "person": "người",
+                "furnished": "Nội thất",
+                "fullyFurnished": "Đầy đủ",
+                "basicFurnished": "Cơ bản"
+            },
+            "actions": {
+                "call": "Gọi {phone}",
+                "saved": "Đã lưu phòng",
+                "save": "Lưu phòng này"
+            },
+            "notice": {
+                "title": "Lưu ý",
+                "description": "Kiểm tra thông tin phòng và trao đổi trực tiếp với chủ trọ trước khi đặt cọc."
+            },
+            "schedule": {
+                "title": "Lên lịch xem phòng",
+                "description": "Liên hệ chủ trọ để thống nhất thời gian xem phòng trực tiếp."
+            }
         }
     },
     "footer": {

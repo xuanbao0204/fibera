@@ -10,7 +10,6 @@
   backdrop-filter: blur(24px) saturate(180%);
 
   border: 1px solid var(--line);
-  border-radius: 9999px;
 
   box-shadow:
     0 12px 40px rgba(0, 0, 0, 0.16),
