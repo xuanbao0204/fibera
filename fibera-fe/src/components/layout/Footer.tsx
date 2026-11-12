@@ -9,7 +9,6 @@ const linkClass = "text-sm text-fg-2 transition hover:text-brand-text";
 
 export function Footer({ lang, t, nav }: FooterProps) {
   const explore = [
-    { label: nav.features, href: `/${lang}#features` },
     { label: nav.about, href: `/${lang}#about` },
     { label: t.faqLabel, href: `/${lang}#faq` },
     { label: nav.contact, href: `/${lang}#contact` },

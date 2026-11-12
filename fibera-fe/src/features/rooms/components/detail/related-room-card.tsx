@@ -95,7 +95,7 @@ export function RelatedRoomCard({
                         <p className="text-lg font-bold text-brand-text">
                             {formatCompactPrice(price.rent, lang)}
                             <span className="ml-1 text-xs font-medium text-fg-muted">
-                                {t.pricing.perMonth}
+                                {t.pricing.period[price.period]}
                             </span>
                         </p>
                     </div>
