@@ -4,12 +4,14 @@ import { UsersModule } from '../users/users.module.js';
 import { AccountsModule } from '../accounts/accounts.module.js';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
-import { config } from 'rxjs/internal/config';
 import { RolesGuard } from './guards/roles.guard.js';
 import { JwtAuthGuard } from './guards/jwt-auth.guard.js';
 import { APP_GUARD } from '@nestjs/core/constants.js';
 import { AuthController } from './auth.controller.js';
 import { SuperAdminSeeder } from './super-admin.seeder.js';
+import { RefreshTokensService } from './refresh-tokens/refresh-tokens.service.js';
+import { RefreshTokensRepository } from './refresh-tokens/refresh-tokens.repository.js';
+import { DrizzleRefreshTokensRepository } from './refresh-tokens/drizzle-refresh-token.repository.js';
 
 @Module({
   imports: [
@@ -25,7 +27,9 @@ import { SuperAdminSeeder } from './super-admin.seeder.js';
       })
     })
   ],
-  providers: [AuthService, SuperAdminSeeder,
+  providers: [AuthService, RefreshTokensService, SuperAdminSeeder,
+    { provide: RefreshTokensRepository, useClass: DrizzleRefreshTokensRepository }, 
+    SuperAdminSeeder,
     { provide: APP_GUARD, useClass: JwtAuthGuard },
     { provide: APP_GUARD, useClass: RolesGuard },
   ],

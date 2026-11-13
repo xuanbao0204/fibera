@@ -1,7 +1,7 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { AccountsService } from '../accounts/accounts.service.js';
-import type { PublicAccount } from '../accounts/domain/index.js';
+import { AccountStatus, type PublicAccount } from '../accounts/domain/index.js';
 import { ErrorCode } from '../common/constants/error-code.enum.js';
 import {
     PUBLIC_REGISTER_ROLES,
@@ -11,6 +11,7 @@ import { ApiException } from '../common/exceptions/api.exception.js';
 import { UsersService } from '../users/users.service.js';
 import type { AuthResult, JwtPayload, RegisterInput } from './auth.types.js';
 import { User } from '../users/domain/index.js';
+import { RefreshTokensService } from './refresh-tokens/refresh-tokens.service.js';
 
 @Injectable()
 export class AuthService {
@@ -18,6 +19,7 @@ export class AuthService {
         private readonly users: UsersService,
         private readonly accounts: AccountsService,
         private readonly jwt: JwtService,
+        private readonly refreshTokens: RefreshTokensService
     ) { }
 
     async register(input: RegisterInput): Promise<AuthResult> {
@@ -30,23 +32,48 @@ export class AuthService {
         }
 
         const userId = await this.createProfile(input);
+        let account: PublicAccount;
         try {
-            const account = await this.accounts.create({
+            account = await this.accounts.create({
                 email: input.email,
                 password: input.password,
                 role: input.role,
                 userId,
             });
-            return await this.issueToken(account);
         } catch (error) {
             await this.users.remove(input.role, userId);
             throw error;
         }
+        return this.issueTokens(account);
     }
 
     async login(email: string, password: string): Promise<AuthResult> {
         const account = await this.accounts.authenticate(email, password);
-        return this.issueToken(account);
+        return this.issueTokens(account);
+    }
+
+    async refresh(refreshToken: string): Promise<AuthResult> {
+        const rotated = await this.refreshTokens.rotate(refreshToken);
+        const account = await this.accounts.findById(rotated.accountId);
+
+        if (account.status !== AccountStatus.ACTIVE) {
+            await this.refreshTokens.revokeFamily(rotated.familyId);
+            throw new ApiException(
+                HttpStatus.FORBIDDEN,
+                ErrorCode.ACCOUNT_SUSPENDED,
+                'Account is suspended',
+            );
+        }
+
+        return {
+            account,
+            accessToken: await this.signAccessToken(account),
+            refreshToken: rotated.token,
+        };
+    }
+
+    async logout(refreshToken: string): Promise<void> {
+        await this.refreshTokens.revokeFamilyByToken(refreshToken);
     }
 
     async getCurrent(account: PublicAccount,): Promise<{ account: PublicAccount; profile: User }> {
@@ -79,8 +106,17 @@ export class AuthService {
         return landlord.id;
     }
 
-    private async issueToken(account: PublicAccount): Promise<AuthResult> {
+    private async issueTokens(account: PublicAccount): Promise<AuthResult> {
+        const { token } = await this.refreshTokens.issue(account.id);
+        return {
+            account,
+            accessToken: await this.signAccessToken(account),
+            refreshToken: token,
+        };
+    }
+
+    private signAccessToken(account: PublicAccount): Promise<string> {
         const payload: JwtPayload = { sub: account.id, role: account.role };
-        return { account, accessToken: await this.jwt.signAsync(payload) };
+        return this.jwt.signAsync(payload);
     }
 }

@@ -9,15 +9,18 @@ import { ResponseInterceptor } from './common/interceptors/response.interceptor.
 import { UsersModule } from './users/users.module.js';
 import { AccountsModule } from './accounts/accounts.module.js';
 import { AuthModule } from './auth/auth.module.js';
+import { DatabaseModule } from './database/database.module.js';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env',
     }),
+    DatabaseModule,
     UsersModule,
     AccountsModule,
-    AuthModule
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService,
