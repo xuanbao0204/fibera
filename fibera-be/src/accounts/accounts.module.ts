@@ -5,10 +5,11 @@ import { BcryptPasswordHasher } from '../utils/security/bcrypt-password-hashser.
 import { PasswordHasher } from '../utils/security/password-hasher.js';
 import { AccountsService } from './accounts.service.js';
 import { AccountsController } from './accounts.controller.js';
+import { DrizzleAccountsRepository } from './repositories/drizzle-accounts.repository.js';
 
 @Module({
     providers: [
-        { provide: AccountsRepository, useClass: InMemoryAccountsRepository,},
+        { provide: AccountsRepository, useClass: DrizzleAccountsRepository,},
         { provide: PasswordHasher, useClass: BcryptPasswordHasher },
         AccountsService,
     ],

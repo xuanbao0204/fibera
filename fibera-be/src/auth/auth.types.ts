@@ -18,6 +18,7 @@ export interface RegisterInput {
 export interface AuthResult {
     account: PublicAccount;
     accessToken: string;
+    refreshToken: string;
 }
 
 export type AuthenticatedRequest = Request & { account: PublicAccount };
